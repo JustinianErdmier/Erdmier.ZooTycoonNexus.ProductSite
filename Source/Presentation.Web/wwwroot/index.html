@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta content="width=device-width, initial-scale=1.0"
+              name="viewport" />
+        <base href="/" />
+        <title>Zoo Tycoon Nexus</title>
+        <link href="images/icons/brand/lion.png"
+              rel="icon"
+              type="image/png" />
+        <link id="webassembly"
+              rel="preload" />
+        <link href="css/app.css"
+              rel="stylesheet" />
+        <script type="importmap"></script>
+    </head>
+
+    <body>
+        <div id="app">
+            <svg class="loading-progress">
+                <circle cx="50%"
+                        cy="50%"
+                        r="40%" />
+
+                <circle cx="50%"
+                        cy="50%"
+                        r="40%" />
+            </svg>
+
+            <div class="loading-progress-text"></div>
+        </div>
+
+        <div id="blazor-error-ui">
+            An unhandled error has occurred.
+
+            <a class="reload"
+               href=".">Reload</a>
+
+            <span class="dismiss">🗙</span>
+        </div>
+
+        <!--suppress HtmlUnknownTarget -->
+        <script src="_framework/blazor.webassembly#[.{fingerprint}].js"></script>
+    </body>
+
+</html>

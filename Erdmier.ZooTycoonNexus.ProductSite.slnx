@@ -1,0 +1,10 @@
+<Solution>
+  <Folder Name="/SolutionItems/">
+    <File Path=".claudeignore" />
+    <File Path=".gitignore" />
+    <File Path="CLAUDE.md" />
+  </Folder>
+  <Folder Name="/Source/">
+    <Project Path="Source/Presentation.Web/Presentation.Web.csproj" />
+  </Folder>
+</Solution>
