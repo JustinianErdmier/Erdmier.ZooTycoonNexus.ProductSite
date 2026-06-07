@@ -1,9 +1,12 @@
-<section id="contribute" class="section contribute">
+<section id="contribute"
+         class="section contribute">
     <div class="wrap contribute-grid">
         <div>
             <div class="section-head">
                 <span class="eyebrow">Open source</span>
+
                 <h2>Built in the open. Contributions welcomed.</h2>
+
                 <p class="lead">
                     Nexus is free, fan-made, and fully open source — one developer and a
                     growing community of keepers. Whether you ship a code fix, draw a pixel
@@ -16,16 +19,25 @@
                 @foreach (HelpWayItem helpWay in HelpWays)
                 {
                     <span class="help-chip">
-                        <img class="px" src="@helpWay.Icon" alt="" />@helpWay.Title
+                        <img class="px"
+                             src="@helpWay.Icon"
+                             alt="" />@helpWay.Title
                     </span>
                 }
             </div>
 
             <div class="contribute-actions">
-                <a class="btn btn-accent" href="@RepoUrl" target="_blank" rel="noopener noreferrer">
+                <a class="btn btn-accent"
+                   href="@Links.NexusRepoUrl"
+                   target="_blank"
+                   rel="noopener noreferrer">
                     View the repo on GitHub
                 </a>
-                <a class="btn btn-ghost" href="@($"{RepoUrl}/contribute")" target="_blank" rel="noopener noreferrer">
+
+                <a class="btn btn-ghost"
+                   href="@($"{Links.NexusRepoUrl}/contribute")"
+                   target="_blank"
+                   rel="noopener noreferrer">
                     Good first issues
                 </a>
             </div>
@@ -34,35 +46,48 @@
         <div class="contribute-art scan">
             <div class="w95 term">
                 <div class="w95-title">
-                    <img class="t-ico px" src="@Images.Icons.Win95.ConfigSheet16" alt="" />
+                    <img class="t-ico px"
+                         src="@Images.Icons.Win95.ConfigSheet16"
+                         alt="" />
+
                     <b>Command Prompt — nexus</b>
+
                     <span class="spacer"></span>
+
                     <span class="w95-tbtn">_</span>
+
                     <span class="w95-tbtn">▢</span>
+
                     <span class="w95-tbtn">✕</span>
                 </div>
+
                 <div class="term-body">
                     <div class="row"><span class="pr">C:\dev></span> <span class="cmd">git clone github.com/…/nexus.git</span></div>
+
                     <div class="row dim">Cloning into 'nexus'…</div>
+
                     <div class="row dim">Resolving deltas: 100% — done.</div>
+
                     <div class="row"><span class="pr">C:\dev\nexus></span> <span class="cmd">code .</span></div>
+
                     <div class="row ok2">› ready when you are<span class="term-cursor"></span></div>
                 </div>
             </div>
+
             <div class="callout c-pr">⌁ PRs <b>welcome</b></div>
         </div>
     </div>
 </section>
 
 @code {
-    private string RepoUrl => Links.RepoUrl;
 
     private static readonly HelpWayItem[] HelpWays =
     [
-        new(Icon: Images.Icons.Win95.ConfigSheet16,        Title: "Write code"),
-        new(Icon: Images.Icons.Win95.Mystify16,            Title: "Pixel art"),
-        new(Icon: Images.Icons.Win95.SheetsAndDocuments32, Title: "Docs"),
-        new(Icon: Images.Icons.Win95.SearchComputer16,     Title: "Bug reports"),
-        new(Icon: Images.Icons.Win95.TextDocument32,       Title: "Translations"),
+        new(Images.Icons.Win95.ConfigSheet16, Title: "Write code"),
+        new(Images.Icons.Win95.Mystify16, Title: "Pixel art"),
+        new(Images.Icons.Win95.SheetsAndDocuments32, Title: "Docs"),
+        new(Images.Icons.Win95.SearchComputer16, Title: "Bug reports"),
+        new(Images.Icons.Win95.TextDocument32, Title: "Translations")
     ];
+
 }

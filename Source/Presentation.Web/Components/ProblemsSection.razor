@@ -1,8 +1,11 @@
-<section id="fixes" class="section problems">
+<section id="fixes"
+         class="section problems">
     <div class="wrap">
         <div class="section-head">
             <span class="eyebrow">The annoying parts</span>
+
             <h2>Everything that used to kill a nostalgia session — handled.</h2>
+
             <p class="lead">
                 Getting a 25-year-old game running shouldn't take an afternoon of forum threads and YouTube videos.
                 Nexus turns the usual headaches into one-click fixes.
@@ -15,13 +18,21 @@
                 <article class="prob-card">
                     <div class="prob-tags">
                         <span class="tag bug">Issue</span>
+
                         <span class="arrow">→</span>
+
                         <span class="tag fixed">Fixed</span>
                     </div>
+
                     <h3>@problem.Title</h3>
+
                     <p>@problem.Description</p>
+
                     <div class="fix">
-                        <img class="px" src="@Images.Icons.Win95.Ok32" alt="" />
+                        <img class="px"
+                             src="@Images.Icons.Win95.Ok32"
+                             alt="" />
+                        
                         <span><b>Nexus:</b> @problem.Fix</span>
                     </div>
                 </article>
@@ -31,26 +42,21 @@
 </section>
 
 @code {
+
     private static readonly ProblemItem[] Problems =
     [
-        new(
-            Title: "It won't launch on modern Windows",
+        new(Title: "It won't launch on modern Windows",
             Description: "Black screens, instant crashes, and a graveyard of compatibility-mode checkboxes that never quite work.",
             Fix: "Nexus helps apply the right launch and compatibility settings for you, letting the game start clean."),
-
-        new(
-            Title: "Stuck at 800×600 resolution",
+        new(Title: "Stuck at 800×600 resolution",
             Description: "The original caps you to a tiny, stretched window — painful on a modern monitor.",
             Fix: "It scans all available screen modes and unlocks true widescreen options in a dropdown."),
-
-        new(
-            Title: "Hand-editing zoo.ini",
+        new(Title: "Hand-editing zoo.ini",
             Description: "One stray character and the game refuses to start — with no hint as to why.",
             Fix: "A visual editor for every [section], with validation, undo, and full audit history. No text files harmed."),
-
-        new(
-            Title: "Scattered, half-broken installs",
+        new(Title: "Scattered, half-broken installs",
             Description: "Disc here, a GOG copy there, an old install missing its EXE or INI entirely.",
-            Fix: "Nexus auto-detects every copy and one-click-repairs the missing pieces."),
+            Fix: "Nexus auto-detects every copy and one-click-repairs the missing pieces.")
     ];
+
 }

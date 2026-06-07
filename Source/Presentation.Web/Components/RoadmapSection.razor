@@ -1,8 +1,11 @@
-<section id="roadmap" class="section roadmap">
+<section id="roadmap"
+         class="section roadmap">
     <div class="wrap">
         <div class="section-head">
             <span class="eyebrow">On the roadmap</span>
+
             <h2>Beta gets you in early — and these land next.</h2>
+
             <p class="lead">
                 Nexus already nails the basics. But we can do so much more, starting with
                 the two things every long-time keeper asks for.
@@ -13,12 +16,18 @@
             @foreach (RoadmapItem roadmapItem in RoadmapItems)
             {
                 <article class="road-card">
-                    <img class="critter px" src="@roadmapItem.Icon" alt="" />
+                    <img class="critter px"
+                         src="@roadmapItem.Icon"
+                         alt="" />
+
                     <span class="road-status @GetStatusCssClass(roadmapItem.Status)">
                         @GetStatusLabel(roadmapItem.Status)
                     </span>
+
                     <h3>@((MarkupString)roadmapItem.Title)</h3>
+
                     <p class="rdesc">@((MarkupString)roadmapItem.Description)</p>
+
                     <ul class="road-list">
                         @foreach (string bulletPoint in roadmapItem.BulletPoints)
                         {
@@ -36,45 +45,44 @@
 </section>
 
 @code {
+
     private static readonly RoadmapItem[] RoadmapItems =
     [
-        new(
-            Icon: Images.Icons.Brand.Elephant,
-            Status: RoadmapStatuses.Planned,
+        new(Images.Icons.Brand.Elephant,
+            RoadmapStatuses.Planned,
             Title: "Save game management",
             Description: "Back up, restore, and organise your zoos — so a corrupt save never costs you a park you spent weeks building.",
-            BulletPoints:
             [
                 "Automatic backups before every launch",
                 "Restore any previous version of a save",
                 "Organise and label saves by profile",
-                "Cloud-folder friendly for easy syncing",
+                "Cloud-folder friendly for easy syncing"
             ]),
-
-        new(
-            Icon: Images.Icons.Brand.Gate,
-            Status: RoadmapStatuses.NextUp,
+        new(Images.Icons.Brand.Gate,
+            RoadmapStatuses.NextUp,
             Title: "Custom content &amp; mod management",
             Description: "Install, toggle, and organise <code>.ztd</code> content packs without ever dumping loose files into your game directory again.",
-            BulletPoints:
             [
                 "Drag-and-drop <code>.ztd</code> install &amp; uninstall",
                 "Enable or disable packs per installation profile",
-                "Conflict detection &amp; load-order control",
-            ]),
+                "Conflict detection &amp; load-order control"
+            ])
     ];
 
-    private static string GetStatusCssClass(RoadmapStatuses status) => status switch
-    {
-        RoadmapStatuses.Planned => "planned",
-        RoadmapStatuses.NextUp  => "beta",
-        _                       => string.Empty,
-    };
+    private static string GetStatusCssClass(RoadmapStatuses status)
+        => status switch
+        {
+            RoadmapStatuses.Planned => "planned",
+            RoadmapStatuses.NextUp  => "beta",
+            var _                   => string.Empty
+        };
 
-    private static string GetStatusLabel(RoadmapStatuses status) => status switch
-    {
-        RoadmapStatuses.Planned => "Planned",
-        RoadmapStatuses.NextUp  => "Next up",
-        _                       => string.Empty,
-    };
+    private static string GetStatusLabel(RoadmapStatuses status)
+        => status switch
+        {
+            RoadmapStatuses.Planned => "Planned",
+            RoadmapStatuses.NextUp  => "Next up",
+            var _                   => string.Empty
+        };
+
 }

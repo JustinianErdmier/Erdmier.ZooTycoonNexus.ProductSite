@@ -10,5 +10,5 @@ public enum IniEntryKinds
     Ok,
 
     /// <summary>A regular configuration value, rendered in muted green.</summary>
-    Value,
+    Value
 }

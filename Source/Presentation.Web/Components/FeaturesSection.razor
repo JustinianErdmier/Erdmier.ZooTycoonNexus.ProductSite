@@ -1,8 +1,11 @@
-<section id="features" class="section features scan">
+<section id="features"
+         class="section features scan">
     <div class="wrap">
         <div class="section-head">
             <span class="eyebrow">What's in the box</span>
+
             <h2>A control panel for the classic you already love.</h2>
+
             <p class="lead">
                 Everything the original game or other launcher never gave you — detection, repair, configuration,
                 and a clean launch — in one tidy window.
@@ -14,9 +17,13 @@
             {
                 <article class="feat-card">
                     <div class="feat-ico">
-                        <img class="px" src="@feature.Icon" alt="" />
+                        <img class="px"
+                             src="@feature.Icon"
+                             alt="" />
                     </div>
+
                     <h3>@feature.Title</h3>
+
                     <p>@feature.Description</p>
 
                     @if (feature.Entries.Count > 0)
@@ -26,7 +33,9 @@
                             {
                                 <div>
                                     <span class="k">@entry.Key</span>
+
                                     <span> = </span>
+
                                     <span class="@entry.Kind.MapToCssToken()">@entry.Value</span>
                                 </div>
                             }
@@ -39,54 +48,42 @@
 </section>
 
 @code {
+
     private static readonly FeatureItem[] Features =
     [
-        new(
-            Icon: Images.Icons.Win95.SearchComputer16,
+        new(Images.Icons.Win95.SearchComputer16,
             Title: "Auto-detect installations",
             Description: "Point Nexus at a folder, or let it sweep your drives for copies automatically.",
-            Entries:
             [
-                new IniEntry(Key: "scan",  Value: @"C:\Program Files\…", Kind: IniEntryKinds.Key),
-                new IniEntry(Key: "found", Value: "3 installations",      Kind: IniEntryKinds.Ok),
+                new IniEntry(Key: "scan", Value: @"C:\Program Files\…", IniEntryKinds.Key),
+                new IniEntry(Key: "found", Value: "3 installations", IniEntryKinds.Ok)
             ]),
-
-        new(
-            Icon: Images.Icons.Win95.NoInstallationOnComputer32,
+        new(Images.Icons.Win95.NoInstallationOnComputer32,
             Title: "One-click fix",
             Description: "Missing zoo.exe? Deleted zoo.ini? Nexus spots the gap and restores a known-good file instantly.",
-            Entries:
             [
-                new IniEntry(Key: "EXE", Value: "found",              Kind: IniEntryKinds.Ok),
-                new IniEntry(Key: "INI", Value: "missing → restored", Kind: IniEntryKinds.Ok),
+                new IniEntry(Key: "EXE", Value: "found", IniEntryKinds.Ok),
+                new IniEntry(Key: "INI", Value: "missing → restored", IniEntryKinds.Ok)
             ]),
-
-        new(
-            Icon: Images.Icons.Win95.Controls32,
+        new(Images.Icons.Win95.Controls32,
             Title: "Unlock modern resolutions",
             Description: "Reads your display, finds every valid mode, and writes a crisp native resolution into the game.",
-            Entries:
             [
-                new IniEntry(Key: "screenwidth",  Value: "1920", Kind: IniEntryKinds.Value),
-                new IniEntry(Key: "screenheight", Value: "1080", Kind: IniEntryKinds.Value),
+                new IniEntry(Key: "screenwidth", Value: "1920", IniEntryKinds.Value),
+                new IniEntry(Key: "screenheight", Value: "1080", IniEntryKinds.Value)
             ]),
-
-        new(
-            Icon: Images.Icons.Win95.ConfigSheet16,
+        new(Images.Icons.Win95.ConfigSheet16,
             Title: "Visual INI editor",
             Description: "Every setting in zoo.ini — display, performance, AI, debug — laid out in clean, validated tabs with complete descriptions.",
-            Entries: []),
-
-        new(
-            Icon: Images.Icons.Win95.FolderCatalog16,
+            []),
+        new(Images.Icons.Win95.FolderCatalog16,
             Title: "Installation profiles",
             Description: "Keep a pristine Main copy and a modded one side by side. Switch in a click; nothing overwrites.",
-            Entries: []),
-
-        new(
-            Icon: Images.Icons.Win95.Window16,
+            []),
+        new(Images.Icons.Win95.Window16,
             Title: "One-click launch",
             Description: "Green light says Ready to Play. Hit launch and you're building exhibits in seconds.",
-            Entries: []),
+            [])
     ];
+
 }

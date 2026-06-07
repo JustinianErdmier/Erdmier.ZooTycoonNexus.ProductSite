@@ -2,30 +2,65 @@
 
 <header class="nav">
     <div class="wrap nav-in">
-        <a class="brand" href="#top" @onclick="ScrollToTop" @onclick:preventDefault>
-            <img class="px" src="@Images.Icons.Brand.Lion" alt="" />
+        <!--suppress HtmlUnknownAnchorTarget -->
+        <a class="brand"
+           href="#top"
+           @onclick="ScrollToTopAsync"
+           @onclick:preventDefault>
+            <img class="px"
+                 src="@Images.Icons.Brand.Lion"
+                 alt="" />
+
             <span class="wm">
                 <b>Zoo Tycoon Nexus</b>
+
                 <small>Game Launcher</small>
             </span>
         </a>
 
         <nav class="nav-links">
-            <a href="#fixes"      @onclick="@(() => ScrollToSection("fixes"))"      @onclick:preventDefault>Fixes</a>
-            <a href="#features"   @onclick="@(() => ScrollToSection("features"))"   @onclick:preventDefault>Features</a>
-            <a href="#how"        @onclick="@(() => ScrollToSection("how"))"        @onclick:preventDefault>How it works</a>
-            <a href="#roadmap"    @onclick="@(() => ScrollToSection("roadmap"))"    @onclick:preventDefault>Roadmap</a>
-            <a href="#contribute" @onclick="@(() => ScrollToSection("contribute"))" @onclick:preventDefault>Open Source</a>
+            <!--suppress HtmlUnknownAnchorTarget -->
+            <a href="#fixes"
+               @onclick="@(() => ScrollToSectionAsync(sectionId: "fixes"))"
+               @onclick:preventDefault>Fixes</a>
+
+            <!--suppress HtmlUnknownAnchorTarget -->
+            <a href="#features"
+               @onclick="@(() => ScrollToSectionAsync(sectionId: "features"))"
+               @onclick:preventDefault>Features</a>
+
+            <!--suppress HtmlUnknownAnchorTarget -->
+            <a href="#how"
+               @onclick="@(() => ScrollToSectionAsync(sectionId: "how"))"
+               @onclick:preventDefault>How it works</a>
+
+            <!--suppress HtmlUnknownAnchorTarget -->
+            <a href="#roadmap"
+               @onclick="@(() => ScrollToSectionAsync(sectionId: "roadmap"))"
+               @onclick:preventDefault>Roadmap</a>
+
+            <!--suppress HtmlUnknownAnchorTarget -->
+            <a href="#contribute"
+               @onclick="@(() => ScrollToSectionAsync(sectionId: "contribute"))"
+               @onclick:preventDefault>Open Source</a>
         </nav>
 
-        <button class="btn btn-accent nav-cta" @onclick="@(() => ScrollToSection("beta"))">Join the beta</button>
+        <button class="btn btn-accent nav-cta"
+                @onclick="@(() => ScrollToSectionAsync(sectionId: "beta"))">Join the beta
+        </button>
     </div>
 </header>
 
 @code {
-    private async Task ScrollToTop()
-        => await JsRuntime.InvokeVoidAsync("window.scrollTo", new { top = 0, behavior = "smooth" });
 
-    private async Task ScrollToSection(string sectionId)
-        => await JsRuntime.InvokeVoidAsync("scrollToSection", sectionId);
+    private async Task ScrollToTopAsync()
+        => await JsRuntime.InvokeVoidAsync(identifier: "window.scrollTo",
+                                           new
+                                           {
+                                               top      = 0,
+                                               behavior = "smooth"
+                                           });
+
+    private async Task ScrollToSectionAsync(string sectionId) => await JsRuntime.InvokeVoidAsync(identifier: "scrollToSection", sectionId);
+
 }

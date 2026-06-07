@@ -162,31 +162,32 @@ Referenced via `<script src="js/site.js"></script>` in `wwwroot/index.html` (bef
 
 ## Icon / Asset Path Reference
 
-All image paths are resolved through the `Images` static constants class (`Common/Constants/Images.cs`) rather than being hardcoded as strings. Components reference paths via `Images.Icons.Brand.*`, `Images.Icons.Win95.*`, `Images.KofiBanner`, and `Images.LauncherScreenshot`.
+All image paths are resolved through the `Images` static constants class (`Common/Constants/Images.cs`) rather than being hardcoded as strings. Components reference paths via
+`Images.Icons.Brand.*`, `Images.Icons.Win95.*`, `Images.KofiBanner`, and `Images.LauncherScreenshot`.
 
-| Design mapping key    | `Images.*` constant                                    |
-|-----------------------|--------------------------------------------------------|
-| `A.logo`              | `Images.Icons.Brand.Monogram`                          |
-| `A.lion`              | `Images.Icons.Brand.Lion`                              |
-| `A.eleph`             | `Images.Icons.Brand.Elephant`                          |
-| `A.rhino`             | `Images.Icons.Brand.Puma`                              |
-| `A.gate`              | `Images.Icons.Brand.Gate`                              |
-| `A.shot`              | `Images.LauncherScreenshot`                            |
-| `A.kofi`              | `Images.KofiBanner`                                    |
-| `info.ico`            | `Images.Icons.Win95.Information32Gif`                  |
-| `mail-check.ico`      | `Images.Icons.Win95.Mail24`                            |
-| `my-computer.ico`     | `Images.Icons.Win95.MyComputer16`                      |
-| `install-discs.ico`   | `Images.Icons.Win95.InstallationOnComputer16`          |
-| `check.ico`           | `Images.Icons.Win95.Ok32`                              |
-| `search.ico`          | `Images.Icons.Win95.SearchComputer16`                  |
-| `install-stopped.ico` | `Images.Icons.Win95.NoInstallationOnComputer32`        |
-| `controls.ico`        | `Images.Icons.Win95.Controls32`                        |
-| `config-sheet.ico`    | `Images.Icons.Win95.ConfigSheet16`                     |
-| `folder-catalog.ico`  | `Images.Icons.Win95.FolderCatalog16`                   |
-| `exe.ico`             | `Images.Icons.Win95.Window16`                          |
-| `mystify.ico`         | `Images.Icons.Win95.Mystify16`                         |
-| `sheets-docs.ico`     | `Images.Icons.Win95.SheetsAndDocuments32`              |
-| `help-page.ico`       | `Images.Icons.Win95.TextDocument32`                    |
+| Design mapping key    | `Images.*` constant                             |
+|-----------------------|-------------------------------------------------|
+| `A.logo`              | `Images.Icons.Brand.Monogram`                   |
+| `A.lion`              | `Images.Icons.Brand.Lion`                       |
+| `A.eleph`             | `Images.Icons.Brand.Elephant`                   |
+| `A.rhino`             | `Images.Icons.Brand.Puma`                       |
+| `A.gate`              | `Images.Icons.Brand.Gate`                       |
+| `A.shot`              | `Images.LauncherScreenshot`                     |
+| `A.kofi`              | `Images.KofiBanner`                             |
+| `info.ico`            | `Images.Icons.Win95.Information32Gif`           |
+| `mail-check.ico`      | `Images.Icons.Win95.Mail24`                     |
+| `my-computer.ico`     | `Images.Icons.Win95.MyComputer16`               |
+| `install-discs.ico`   | `Images.Icons.Win95.InstallationOnComputer16`   |
+| `check.ico`           | `Images.Icons.Win95.Ok32`                       |
+| `search.ico`          | `Images.Icons.Win95.SearchComputer16`           |
+| `install-stopped.ico` | `Images.Icons.Win95.NoInstallationOnComputer32` |
+| `controls.ico`        | `Images.Icons.Win95.Controls32`                 |
+| `config-sheet.ico`    | `Images.Icons.Win95.ConfigSheet16`              |
+| `folder-catalog.ico`  | `Images.Icons.Win95.FolderCatalog16`            |
+| `exe.ico`             | `Images.Icons.Win95.Window16`                   |
+| `mystify.ico`         | `Images.Icons.Win95.Mystify16`                  |
+| `sheets-docs.ico`     | `Images.Icons.Win95.SheetsAndDocuments32`       |
+| `help-page.ico`       | `Images.Icons.Win95.TextDocument32`             |
 
 ---
 

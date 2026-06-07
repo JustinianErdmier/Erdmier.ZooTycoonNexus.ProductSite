@@ -1,10 +1,18 @@
 <Solution>
-  <Folder Name="/SolutionItems/">
-    <File Path=".claudeignore" />
-    <File Path=".gitignore" />
-    <File Path="CLAUDE.md" />
-  </Folder>
-  <Folder Name="/Source/">
-    <Project Path="Source/Presentation.Web/Presentation.Web.csproj" />
-  </Folder>
+    <Folder Name="/Docs/" />
+    <Folder Name="/Docs/Superpowers/" />
+    <Folder Name="/Docs/Superpowers/Plans/">
+        <File Path="Docs/Superpowers/Plans/2026-06-07-home-page.md" />
+    </Folder>
+    <Folder Name="/Docs/Superpowers/Specs/">
+        <File Path="Docs/Superpowers/Specs/2026-06-07-home-page-design.md" />
+    </Folder>
+    <Folder Name="/SolutionItems/">
+        <File Path=".claudeignore" />
+        <File Path=".gitignore" />
+        <File Path="CLAUDE.md" />
+    </Folder>
+    <Folder Name="/Source/">
+        <Project Path="Source/Presentation.Web/Presentation.Web.csproj" />
+    </Folder>
 </Solution>

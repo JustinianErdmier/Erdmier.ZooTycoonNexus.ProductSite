@@ -1,7 +1,9 @@
-<section id="how" class="section how">
+<section id="how"
+         class="section how">
     <div class="wrap">
         <div class="section-head">
             <span class="eyebrow">How it works</span>
+
             <h2>Three steps from "won't run" to "Ready to Play."</h2>
         </div>
 
@@ -9,13 +11,15 @@
             @for (int stepIndex = 0; stepIndex < Steps.Length; stepIndex++)
             {
                 StepItem currentStep = Steps[stepIndex];
-                int stepNumber = stepIndex + 1;
+                int      stepNumber  = stepIndex + 1;
 
                 <div class="step">
                     <div class="step-n">
-                        <i>@stepNumber</i> Step @stepNumber.ToString("D2")
+                        <i>@stepNumber</i> Step @stepNumber.ToString(format: "D2")
                     </div>
+
                     <h3>@currentStep.Title</h3>
+
                     <p>@currentStep.Description</p>
                 </div>
             }
@@ -24,18 +28,15 @@
 </section>
 
 @code {
+
     private static readonly StepItem[] Steps =
     [
-        new(
-            Title: "Point it at your game",
+        new(Title: "Point it at your game",
             Description: "Add an installation by hand, or let Nexus auto-detect your copies of Zoo Tycoon."),
-
-        new(
-            Title: "Nexus checks & fixes",
+        new(Title: "Nexus checks & fixes",
             Description: "It validates the zoo.exe and zoo.ini, flags anything missing or broken, and repairs it in a single click."),
-
-        new(
-            Title: "Tune & launch",
-            Description: "Pick your resolution and game settings, then hit Launch Game. That's the whole flow."),
+        new(Title: "Tune & launch",
+            Description: "Pick your resolution and game settings, then hit Launch Game. That's the whole flow.")
     ];
+
 }

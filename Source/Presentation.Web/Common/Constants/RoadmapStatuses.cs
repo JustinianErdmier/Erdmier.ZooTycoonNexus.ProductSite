@@ -7,5 +7,5 @@ public enum RoadmapStatuses
     Planned,
 
     /// <summary>The feature is scheduled for the next release.</summary>
-    NextUp,
+    NextUp
 }
