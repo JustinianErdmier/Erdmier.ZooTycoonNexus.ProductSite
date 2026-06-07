@@ -52,7 +52,7 @@
 </footer>
 
 @code {
-    private const string RepoUrl = "https://github.com/zoo-tycoon-nexus/nexus";
+    private string RepoUrl => Links.RepoUrl;
 
     private async Task ScrollToSection(string sectionId)
         => await JsRuntime.InvokeVoidAsync("scrollToSection", sectionId);

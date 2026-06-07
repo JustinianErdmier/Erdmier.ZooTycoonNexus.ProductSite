@@ -69,7 +69,7 @@
 
     private void HandleSubmit()
     {
-        bool isValidEmail = System.Text.RegularExpressions.Regex.IsMatch(
+        bool isValidEmail = Regex.IsMatch(
             _email.Trim(),
             @"^[^\s@]+@[^\s@]+\.[^\s@]+$");
 
