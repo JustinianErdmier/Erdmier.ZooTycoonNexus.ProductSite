@@ -1,0 +1,31 @@
+@inject IJSRuntime JsRuntime
+
+<header class="nav">
+    <div class="wrap nav-in">
+        <a class="brand" href="#top" @onclick="ScrollToTop" @onclick:preventDefault>
+            <img class="px" src="@Images.Icons.Brand.Lion" alt="" />
+            <span class="wm">
+                <b>Zoo Tycoon Nexus</b>
+                <small>Game Launcher</small>
+            </span>
+        </a>
+
+        <nav class="nav-links">
+            <a href="#fixes"      @onclick="@(() => ScrollToSection("fixes"))"      @onclick:preventDefault>Fixes</a>
+            <a href="#features"   @onclick="@(() => ScrollToSection("features"))"   @onclick:preventDefault>Features</a>
+            <a href="#how"        @onclick="@(() => ScrollToSection("how"))"        @onclick:preventDefault>How it works</a>
+            <a href="#roadmap"    @onclick="@(() => ScrollToSection("roadmap"))"    @onclick:preventDefault>Roadmap</a>
+            <a href="#contribute" @onclick="@(() => ScrollToSection("contribute"))" @onclick:preventDefault>Open Source</a>
+        </nav>
+
+        <button class="btn btn-accent nav-cta" @onclick="@(() => ScrollToSection("beta"))">Join the beta</button>
+    </div>
+</header>
+
+@code {
+    private async Task ScrollToTop()
+        => await JsRuntime.InvokeVoidAsync("window.scrollTo", new { top = 0, behavior = "smooth" });
+
+    private async Task ScrollToSection(string sectionId)
+        => await JsRuntime.InvokeVoidAsync("scrollToSection", sectionId);
+}
