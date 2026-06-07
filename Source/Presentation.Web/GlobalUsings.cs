@@ -9,6 +9,6 @@ global using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 global using Microsoft.AspNetCore.Components.WebAssembly.Http;
 global using Microsoft.JSInterop;
 
-global using Presentation.Web;
-global using Presentation.Web.Layout;
-global using Presentation.Web.Pages;
+global using Erdmier.ZooTycoonNexus.Presentation.Web;
+global using Erdmier.ZooTycoonNexus.Presentation.Web.Layout;
+global using Erdmier.ZooTycoonNexus.Presentation.Web.Pages;
