@@ -648,7 +648,7 @@ h3 {
 }
 
 @media (max-width: 880px) {
-    .heroB-grid {
+    .hero-grid {
         gap:                   40px;
         grid-template-columns: 1fr;
     }
