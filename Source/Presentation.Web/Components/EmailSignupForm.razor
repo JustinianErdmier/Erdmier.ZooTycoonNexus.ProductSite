@@ -1,0 +1,85 @@
+<form class="@FormCssClass" @onsubmit="HandleSubmit" @onsubmit:preventDefault novalidate>
+    <div class="signup-row">
+        @if (!Compact)
+        {
+            <input class="signup-name"
+                   type="text"
+                   placeholder="Your name (optional)"
+                   value="@_name"
+                   @oninput="@(eventArgs => _name = eventArgs.Value?.ToString() ?? string.Empty)"
+                   aria-label="Your name" />
+        }
+
+        <input type="email"
+               placeholder="you@email.com"
+               value="@_email"
+               @oninput="HandleEmailInput"
+               aria-label="Email address" />
+
+        <button type="submit" class="btn btn-accent">@CallToAction</button>
+    </div>
+
+    <div class="signup-err">Hmm, that doesn't look like an email address.</div>
+
+    <div class="micro micro-default">
+        <img class="px" src="@Images.Icons.Win95.Information32Gif" alt="" />
+        <span>No spam — one note when your beta key is ready. Unsubscribe anytime.</span>
+    </div>
+
+    <div class="signup-success">
+        <img class="px" src="@Images.Icons.Win95.Mail24" alt="" />
+        <div>
+            <b>You're on the list@(string.IsNullOrWhiteSpace(_name) ? string.Empty : $", {FirstName}")!</b>
+            <span>We'll email <strong>@_email</strong> the moment closed beta keys go out.</span>
+        </div>
+    </div>
+</form>
+
+@code {
+    private enum SubmissionStates { Idle, ValidationError, Submitted }
+
+    [Parameter] public string CallToAction { get; set; } = "Request beta access";
+    [Parameter] public bool Compact { get; set; }
+
+    private string _name  = string.Empty;
+    private string _email = string.Empty;
+    private SubmissionStates _submissionState = SubmissionStates.Idle;
+
+    private string FormCssClass => _submissionState switch
+    {
+        SubmissionStates.ValidationError => "signup err",
+        SubmissionStates.Submitted       => "signup done",
+        _                                => "signup",
+    };
+
+    private string FirstName =>
+        _name.Trim() is { Length: > 0 } trimmedName
+            ? trimmedName.Split(' ')[0]
+            : string.Empty;
+
+    private void HandleEmailInput(ChangeEventArgs eventArgs)
+    {
+        _email = eventArgs.Value?.ToString() ?? string.Empty;
+
+        if (_submissionState == SubmissionStates.ValidationError)
+        {
+            _submissionState = SubmissionStates.Idle;
+        }
+    }
+
+    private void HandleSubmit()
+    {
+        bool isValidEmail = System.Text.RegularExpressions.Regex.IsMatch(
+            _email.Trim(),
+            @"^[^\s@]+@[^\s@]+\.[^\s@]+$");
+
+        if (!isValidEmail)
+        {
+            _submissionState = SubmissionStates.ValidationError;
+
+            return;
+        }
+
+        _submissionState = SubmissionStates.Submitted;
+    }
+}
