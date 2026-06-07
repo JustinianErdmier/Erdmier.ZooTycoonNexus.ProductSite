@@ -1,0 +1,59 @@
+@inject IJSRuntime JsRuntime
+
+<footer class="footer">
+    <div class="wrap">
+        <div class="footer-top">
+            <div>
+                <div class="brand">
+                    <img class="px" src="@Images.Icons.Brand.Lion" alt="" style="width: 34px; height: 34px;" />
+                    <span class="wm">
+                        <b>Zoo Tycoon Nexus</b>
+                        <small>Game Launcher</small>
+                    </span>
+                </div>
+
+                <div class="footer-support" style="margin-top: 22px">
+                    <p>A community labour of love, built by one fan who got tired of fighting their own install. Free and OSS, forever. If it saved your afternoon, you can buy the dev a coffee.</p>
+                    <a href="#" @onclick:preventDefault aria-label="Support on Ko-fi">
+                        <img class="kofi" src="@Images.KofiBanner" alt="Support me on Ko-fi" />
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-cols">
+                <div class="footer-col">
+                    <h5>Product</h5>
+                    <a href="#fixes"      @onclick="@(() => ScrollToSection("fixes"))"      @onclick:preventDefault>Fixes</a>
+                    <a href="#features"   @onclick="@(() => ScrollToSection("features"))"   @onclick:preventDefault>Features</a>
+                    <a href="#how"        @onclick="@(() => ScrollToSection("how"))"        @onclick:preventDefault>How it works</a>
+                    <a href="#roadmap"    @onclick="@(() => ScrollToSection("roadmap"))"    @onclick:preventDefault>Roadmap</a>
+                    <a href="#contribute" @onclick="@(() => ScrollToSection("contribute"))" @onclick:preventDefault>Open Source</a>
+                </div>
+
+                <div class="footer-col">
+                    <h5>Community</h5>
+                    <a href="#" @onclick:preventDefault>Discord</a>
+                    <a href="@RepoUrl" target="_blank" rel="noopener noreferrer">GitHub</a>
+                    <a href="#" @onclick:preventDefault>Ko-fi</a>
+                    <a href="#beta" @onclick="@(() => ScrollToSection("beta"))" @onclick:preventDefault>Join the beta</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p class="disc">
+                Zoo Tycoon Nexus is a free, fan-made launcher and is <strong>not affiliated with,
+                endorsed by, or associated with</strong> Microsoft or the rights holders of Zoo Tycoon.
+                "Zoo Tycoon" is a trademark of its respective owners.
+            </p>
+            <span>© 2026 Zoo Tycoon Nexus · Made by the community</span>
+        </div>
+    </div>
+</footer>
+
+@code {
+    private const string RepoUrl = "https://github.com/zoo-tycoon-nexus/nexus";
+
+    private async Task ScrollToSection(string sectionId)
+        => await JsRuntime.InvokeVoidAsync("scrollToSection", sectionId);
+}
